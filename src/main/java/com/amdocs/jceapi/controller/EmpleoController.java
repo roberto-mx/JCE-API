@@ -28,7 +28,7 @@ public class EmpleoController {
                         @RequestParam(defaultValue = "id") String sortBy) {
         List<Empleo> list = service.getAllEmpleos(pageNo, pageSize, sortBy);
  
-        return new ResponseEntity<List<Empleo>>(list, new HttpHeaders(), HttpStatus.OK); 
+        return ResponseEntity.ok(list); 
     }
 	
 	@GetMapping("/Categorias/{categoryId}/Empleos")

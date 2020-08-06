@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user", schema = "jceamdocs")
+@Table(name="user_account", schema = "jceamdocs")
 public class User {
 
 	@Id
@@ -37,7 +37,7 @@ public class User {
 	private String countryCode;
 	
 	@OneToOne(fetch=FetchType.EAGER)
-    @JoinColumn(referencedColumnName="idaddress", name="idaddress", unique=true, nullable=false, updatable=false)
+    @JoinColumn(referencedColumnName="idaddress", name="idaddress", unique=false, nullable=true, updatable=false)
 	private Address address;
 	
 	public Long getId() {
