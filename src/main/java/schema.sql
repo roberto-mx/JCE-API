@@ -1,1 +1,1 @@
-create schema JCEAMDOCS;
+create schema jceamdocs;

@@ -15,13 +15,12 @@ import com.amdocs.jceapi.domain.Empleo;
 import com.amdocs.jceapi.service.EmpleoService;
 
 @Controller
-//@RequestMapping("otros")
 public class EmpleoController {
 
 	@Autowired
 	private EmpleoService service;
 	
-	@GetMapping("/Empleos/list")
+	@GetMapping("/Empleo")
     public ResponseEntity<List<Empleo>> getAllEmployees(
                         @RequestParam(defaultValue = "0") Integer pageNo, 
                         @RequestParam(defaultValue = "10") Integer pageSize,
@@ -31,15 +30,15 @@ public class EmpleoController {
         return ResponseEntity.ok(list); 
     }
 	
-	@GetMapping("/Categorias/{categoryId}/Empleos")
-    public ResponseEntity<?> getEmployeesByCategory(@PathVariable String categoryId) {
+	@GetMapping("/Empleo/{empleoId}")
+    public ResponseEntity<?> getEmployeesByCategory(@PathVariable String empleoId) {
 		List<Empleo> empleos;
 		try {
-			Long category = Long.parseLong(categoryId);
+			Long category = Long.parseLong(empleoId);
 			empleos = service.findEmpleoByCategory(category);
 		} catch (NumberFormatException ex) {
-			System.err.println("Invalid category id: " + categoryId);
-			return new ResponseEntity<String>("Invalid category id: " + categoryId, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+			System.err.println("Invalid category id: " + empleoId);
+			return new ResponseEntity<String>("Invalid category id: " + empleoId, new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}
 
         return new ResponseEntity<List<Empleo>>(empleos, new HttpHeaders(), HttpStatus.OK);

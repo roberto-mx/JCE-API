@@ -20,15 +20,17 @@ public class JseDataLayerApiApplication {
 
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
-	        return new WebMvcConfigurer() {
-	                @Override
-	                public void addCorsMappings(CorsRegistry registry) {
-	                        registry.addMapping("/**")
-	                                .allowedOrigins("https://jaliscoempleo.herokuapp.com/")
-	                                .allowedMethods("GET", "POST", "PUT", "DELETE")
-	                                .maxAge(3600);
-	                }
-
-	        };
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/Categoria").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Empleo").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Empleo/*").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Skills/*").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Skill/*").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Provider/*").allowedOrigins("http://localhost:9001");
+				
+			}
+		};
 	}
 }
