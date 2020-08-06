@@ -11,7 +11,6 @@
 	<groupId>com.amdocs</groupId>
 	<artifactId>jceapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<name>JSE data layer API</name>
 	<description>Jalisco con empleo data layer API</description>
 
@@ -53,11 +52,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
@@ -81,7 +75,7 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>{version}</version>
 				<configuration>
-					<appName>heroku-demo-stackabuse</appName>
+					<appName>jce-api</appName>
 					<includeTarget>false</includeTarget>
 					<includes>
 						<include>${project.build.directory}/${project.build.finalName}.jar</include>
@@ -89,7 +83,7 @@
 					<jdkVersion>1.8</jdkVersion>
 					<processTypes>
 						<web>java $JAVA_OPTS -jar
-							${project.build.directory}/${project.build.finalName}.jar</web>
+							${project.build.directory}/jce-api.jar</web>
 					</processTypes>
 				</configuration>
 			</plugin>
