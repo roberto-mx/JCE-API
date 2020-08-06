@@ -23,12 +23,12 @@ public class JseDataLayerApiApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/Categoria").allowedOrigins("http://localhost:9001");
-				registry.addMapping("/Empleo").allowedOrigins("http://localhost:9001");
-				registry.addMapping("/Empleo/*").allowedOrigins("http://localhost:9001");
-				registry.addMapping("/Skills/*").allowedOrigins("http://localhost:9001");
-				registry.addMapping("/Skill/*").allowedOrigins("http://localhost:9001");
-				registry.addMapping("/Provider/*").allowedOrigins("http://localhost:9001");
+				registry.addMapping("/Categoria").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
+				registry.addMapping("/Empleo").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
+				registry.addMapping("/Empleo/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
+				registry.addMapping("/Skills/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
+				registry.addMapping("/Skill/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
+				registry.addMapping("/Provider/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
 				
 			}
 		};
