@@ -15,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="catalog_skill", schema = "jceamdocs")
+@Table(name="catalog_skill")
 public class Skill {
 
 	@Id

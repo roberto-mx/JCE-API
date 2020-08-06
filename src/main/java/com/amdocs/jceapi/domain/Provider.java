@@ -8,7 +8,7 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="provider", schema = "jceamdocs")
+@Table(name="provider")
 public class Provider {
 
 	@Id

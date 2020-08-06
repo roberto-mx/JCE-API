@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="catalog_category", schema = "jceamdocs")
+@Table(name="catalog_category")
 public class Category {
 
 	@Id

@@ -29,7 +29,7 @@ public class JseDataLayerApiApplication {
 				registry.addMapping("/Skills/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
 				registry.addMapping("/Skill/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
 				registry.addMapping("/Provider/*").allowedOrigins("http://localhost:9001","https://jaliscoempleo.herokuapp.com");
-				
+				registry.addMapping("/h2-console/*").allowedOrigins("https://jce-api.herokuapp.com/");
 			}
 		};
 	}

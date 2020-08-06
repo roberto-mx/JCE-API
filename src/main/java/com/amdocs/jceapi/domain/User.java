@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_account", schema = "jceamdocs")
+@Table(name="user_account")
 public class User {
 
 	@Id
