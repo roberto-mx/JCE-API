@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Address", schema = "jceamdocs")
+@Table(name="Address")
 public class Address {
 
 	@Id

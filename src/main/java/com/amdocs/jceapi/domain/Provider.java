@@ -5,14 +5,16 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="provider", schema = "jceamdocs")
+@Table(name="provider")
 public class Provider {
 
 	@Id
 	@GeneratedValue
-	@Column(name="providerid")
-	private Long id;
+	@Column(name="id")
+	private Long providerId;
 	
 	@Column(name="firstname",columnDefinition = "char(200)")
 	private String firstName;
@@ -26,19 +28,20 @@ public class Provider {
 	@Column(name="gender", columnDefinition = "char(1)")
 	private String gender;
 
-	@ManyToMany(mappedBy = "providers")
+	@ManyToMany(mappedBy = "providers", fetch=FetchType.LAZY)
+	@JsonIgnore
 	private Set<Skill> skills = new HashSet<Skill>();
 	
 	public Provider() {
 		super();
 	}
 
-	public Long getId() {
-		return id;
+	public Long getProviderId() {
+		return providerId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setProviderId(Long id) {
+		this.providerId = id;
 	}
 
 	public String getFirstName() {

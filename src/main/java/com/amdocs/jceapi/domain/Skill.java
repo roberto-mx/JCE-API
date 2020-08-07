@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,13 +15,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="catalog_skill", schema = "jceamdocs")
+@Table(name="catalog_skill")
 public class Skill {
 
 	@Id
 	@GeneratedValue
-	@Column(name="skillid")
-	private Long id;
+	@Column(name="id")
+	private Long skillId;
 	
 	@Column(name="skill2empleo")
 	private Long skill2empleo;
@@ -37,10 +38,10 @@ public class Skill {
 	@ManyToMany(cascade = { 
 	        CascadeType.PERSIST, 
 	        CascadeType.MERGE
-	    })
+	    },fetch=FetchType.LAZY)
 	    @JoinTable(name = "skill_provider",
-	        joinColumns = @JoinColumn(name = "skillid"),
-	        inverseJoinColumns = @JoinColumn(name = "providerid")
+	        joinColumns = @JoinColumn(name = "skill_Id"),
+	        inverseJoinColumns = @JoinColumn(name = "provider_Id")
 	    )
 	private Set<Provider> providers = new HashSet<Provider>();
 
@@ -54,11 +55,11 @@ public class Skill {
 		provider.getSkills().remove(this);
 	}
 	
-	public Long getId() {
-		return id;
+	public Long getSkillId() {
+		return skillId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setSkillId(Long id) {
+		this.skillId = id;
 	}
 
 	public Long getSkill2empleo() {

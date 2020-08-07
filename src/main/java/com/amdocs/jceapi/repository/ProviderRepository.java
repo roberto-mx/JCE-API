@@ -2,15 +2,14 @@ package com.amdocs.jceapi.repository;
 
 import java.util.List;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.Param;
-//import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.amdocs.jceapi.domain.Provider;
+import com.amdocs.jceapi.domain.Skill;
 
-@RepositoryRestResource(path = "Providers", collectionResourceRel = "Providers")
-public interface ProviderRepository extends PagingAndSortingRepository<Provider, Long> {
+@Repository
+public interface ProviderRepository extends CrudRepository<Provider, Long> {
 
-	public List<Provider> findProvidersBySkills(@Param("skillId") Long providerId);
+	public List<Provider> findProvidersBySkills(Skill skillId);
 }

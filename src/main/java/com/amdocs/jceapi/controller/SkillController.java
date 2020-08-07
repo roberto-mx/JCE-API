@@ -19,17 +19,31 @@ public class SkillController {
 	@Autowired
 	private SkillService service;
 	
-	@GetMapping("/Empleo/{empleoId}/Skills")
-    public ResponseEntity<?> getEmployeesByCategory(@PathVariable String empleoId) {
+	@GetMapping("/Skills/{idEmpleo}")
+    public ResponseEntity<?> getEmployeesByCategory(@PathVariable String idEmpleo) {
 		List<Skill> skills;
 		try {
-			Long empleo = Long.parseLong(empleoId);
+			Long empleo = Long.parseLong(idEmpleo);
 			skills = service.findSkillsByEmpleo(empleo);
 		} catch (NumberFormatException ex) {
-			System.err.println("Invalid employee id: " + empleoId);
-			return new ResponseEntity<String>("Invalid employee id: " + empleoId, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+			System.err.println("Invalid employee id: " + idEmpleo);
+			return new ResponseEntity<String>("Invalid employee id: " + idEmpleo, new HttpHeaders(), HttpStatus.BAD_REQUEST);
 		}
 
         return new ResponseEntity<List<Skill>>(skills, new HttpHeaders(), HttpStatus.OK);
+    }	
+	
+	@GetMapping("/Skill/{skillId}")
+    public ResponseEntity<?> getEmployeesById(@PathVariable String skillId) {
+		Skill skills;
+		try {
+			Long id = Long.parseLong(skillId);
+			skills = service.findById(id).get();
+		} catch (NumberFormatException ex) {
+			System.err.println("Invalid employee id: " + skillId);
+			return new ResponseEntity<String>("Invalid employee id: " + skillId, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+		}
+
+        return new ResponseEntity<Skill>(skills, new HttpHeaders(), HttpStatus.OK);
     }
 }
