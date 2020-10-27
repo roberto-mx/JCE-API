@@ -27,6 +27,9 @@ public class Provider {
 	
 	@Column(name="gender", columnDefinition = "char(1)")
 	private String gender;
+	
+	@Column(name="profilepicture", columnDefinition = "char(200)")
+	private String profilePicture;
 
 	@ManyToMany(mappedBy = "providers", fetch=FetchType.LAZY)
 	@JsonIgnore
@@ -83,4 +86,13 @@ public class Provider {
 	public void setSkills(Set<Skill> skills) {
 		this.skills = skills;
 	}
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
+	
 }
