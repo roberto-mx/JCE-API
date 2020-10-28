@@ -15,19 +15,19 @@ public class Address {
 	@Column(name="idaddress")
 	private Long id;
 	
-	@Column
+	@Column(name="address_line")
 	private String addressLine1;
 	
-	@Column
+	@Column(name="colony")
 	private String colony;
 	
-	@Column
+	@Column(name="municipality")
 	private String muncipality;
 	
-	@Column
+	@Column(name="zipcode")
 	private String zipcode;
 	
-	@Column
+	@Column(name="state")
 	private String state;
 	
 	public Long getId() {

@@ -15,25 +15,25 @@ public class User {
 
 	@Id
 	@GeneratedValue
-	@Column(name="id_user")
+	@Column(name="user_id")
 	private Long id;
 
-	@Column
+	@Column(name = "first_name", length = 50)
 	private String firstName;
 
-	@Column
+	@Column(name="last_name", length = 50)
 	private String lastName;
 	
-	@Column
+	@Column(name="middle_name", length = 50)
 	private String middleName;
 	
-	@Column
+	@Column(name="user_type")
 	private String userType;
 	
-	@Column
+	@Column(name="phone_number", length = 15)
 	private String phoneNumber;
 	
-	@Column
+	@Column(name="country_code", length = 5)
 	private String countryCode;
 	
 	@OneToOne(fetch=FetchType.EAGER)
