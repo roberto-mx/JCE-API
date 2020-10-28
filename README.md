@@ -12,7 +12,7 @@ Requirements:
 * maven
 * git
 
-Execute maven on localhost: `mvn boot-strap:run`
+Execute maven on localhost: `mvn spring-boot:run`
 
 **Current version: v0.0.1.061020**
 
