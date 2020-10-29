@@ -9,10 +9,11 @@ Jalisco Con Empleo front end is in [https://jaliscoempleo.herokuapp.com/home](ja
 
 Requirements:
 * java jdk 8
-* maven
+* maven or maven
 * git
 
-Execute maven on localhost: `mvn spring-boot:run`
+Execute with maven on localhost: `mvn spring-boot:run`
+Execute with gradle on localhost: `./gradlew bootRun`
 
 **Current version: v0.0.1.061020**
 
