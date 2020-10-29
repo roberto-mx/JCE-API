@@ -12,10 +12,14 @@ Requirements:
 * maven or maven
 * git
 
-Execute with maven on localhost: `mvn spring-boot:run`
+## Local execution
 
-Execute with gradle on localhost: `./gradlew bootRun`
+With maven on localhost: `mvn spring-boot:run`
 
+With gradle on localhost: `./gradlew bootRun`
+
+
+## Version
 **Current version: v0.0.1.061020**
 
 
@@ -23,7 +27,9 @@ Execute with gradle on localhost: `./gradlew bootRun`
 * Base project archetype added and basic functionality
 * Use of H2 database for demo deployed on heroku
 
-Next release
+
+
+## Next release
 * Add filters by ranking
 * Add filters by location
 * Add module for service providers evaluation from customer
@@ -31,7 +37,7 @@ Next release
 * Show path of pictures of service providers
 * Auth Layer for customer and service providers
 
-Backlog
+## Backlog
 * Validate information of service providers 
 * Implement openAPI
 * Change db to PostgreSQL
