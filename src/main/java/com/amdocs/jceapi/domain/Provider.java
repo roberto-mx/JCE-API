@@ -1,11 +1,14 @@
 package com.amdocs.jceapi.domain;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 @Entity
 @Table(name="provider")
@@ -31,6 +34,13 @@ public class Provider {
 	@ManyToMany(mappedBy = "providers", fetch=FetchType.LAZY)
 	@JsonIgnore
 	private Set<Skill> skills = new HashSet<Skill>();
+	
+	
+	@ManyToMany(mappedBy = "providers", fetch=FetchType.LAZY)
+	private List<Municipality> Locations = new ArrayList<Municipality>();
+	
+	
+	
 	
 	public Provider() {
 		super();
@@ -71,6 +81,7 @@ public class Provider {
 	public String getGender() {
 		return gender;
 	}
+	
 
 	public void setGender(String gender) {
 		this.gender = gender;
@@ -82,5 +93,14 @@ public class Provider {
 
 	public void setSkills(Set<Skill> skills) {
 		this.skills = skills;
+	}
+	
+	public void addLocations(Municipality location) {
+		
+		Locations.add(location);
+		
+	}
+	public List<Municipality> getLocations(){
+		return this.Locations;
 	}
 }

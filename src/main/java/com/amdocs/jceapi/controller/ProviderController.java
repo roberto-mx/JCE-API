@@ -50,4 +50,5 @@ public class ProviderController {
 
         return new ResponseEntity<List<Provider>>(providers, new HttpHeaders(), HttpStatus.OK);
     }
+	
 }
